@@ -19,4 +19,6 @@ RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 COPY . .
 
 EXPOSE 8000
-CMD ["node", "index.js"]
+
+# Inicia el servidor de tokens en segundo plano y luego arranca la app
+CMD ["sh", "-c", "python3 -m bgutil_ytdlp_pot_provider.server & node index.js"]
