@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir -U yt-dlp --break-system-packages
+RUN pip3 install --no-cache-dir bgutil-ytdlp-pot-provider --break-system-packages
 
 WORKDIR /app
 
